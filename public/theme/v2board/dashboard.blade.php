@@ -33,10 +33,10 @@
             description: '{{$description}}',
             crisp_id: '{{$crisp_id}}',
             i18n: [
+                'vi-VN',
                 'zh-CN',
                 'en-US',
                 'ja-JP',
-                'vi-VN',
                 'ko-KR',
                 'zh-TW'
             ]
@@ -51,53 +51,10 @@
 </head>
 
 <body>
-    <!-- Messenger Plugin chat Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Plugin chat code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "102703971248264");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
-
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          xfbml            : true,
-          version          : 'v13.0'
-        });
-      };
-
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
 <div id="root"></div>
 <script src="/theme/{{$theme}}/assets/vendors.async.js?v={{$version}}"></script>
 <script src="/theme/{{$theme}}/assets/components.async.js?v={{$version}}"></script>
 <script src="/theme/{{$theme}}/assets/umi.js?v={{$version}}"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1E9Z5LRRK"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-P1E9Z5LRRK');
-</script>
 @if (file_exists(public_path("/theme/{$theme}/assets/custom.js")))
     <script src="/theme/{{$theme}}/assets/custom.js?v={{$version}}"></script>
 @endif
